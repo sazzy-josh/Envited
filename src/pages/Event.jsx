@@ -1,9 +1,18 @@
-import React from 'react'
+import 'react-date-range/dist/styles.css'; // main style file
+import 'react-date-range/dist/theme/default.css'; // theme css file
+import { MdOutlineModeEdit } from 'react-icons/md';
+import { Outlet} from 'react-router-dom'
 
-const Event = () => {
+
+const ViewEvent = () => {
   return (
-    <div>Event</div>
+    <>
+    <Outlet />
+     <div>
+     <MdOutlineModeEdit/>
+     </div>   
+    </>
   )
 }
 
-export default Event
+export default ViewEvent

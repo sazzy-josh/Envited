@@ -5,16 +5,16 @@ export const AppContext = createContext()
 
 const AppContextProvider = ({ children }) => {
     const [ values , setValues ] = useState([{
-        Eventname: "",
-        HostName: "",
-        location: "",
-        photoUrl: ""
-    },
+        Eventname: "", //handles input for eventname 
+        HostName: "",  //handles input for hostname
+        location: "", //handles input for location
+        photoUrl: ""  //handles input for photoUrl
+      }
     ])
 
     const handleChange = (e) => {
-        const {name ,value} = e.target
-        setValues({...values , [name]: value })
+        const {name ,value} = e.target   
+        setValues({ ...values , [name]: value })  
     }
 
     function handleImage(e) {
