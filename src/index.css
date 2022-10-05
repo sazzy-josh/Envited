@@ -8,6 +8,12 @@
   }
 }
 
+@layer components{
+  .input-field{
+    @apply border-purple-300 border-2 text-sm w-full p-2 rounded-md outline-none placeholder:text-opacity-40
+  }
+}
+
 body{
   box-sizing: border-box;
 
@@ -36,8 +42,18 @@ body{
   
 }
 .color{
- color:  #4F4F4F;
- line-height: 100%;
+  color:  #4F4F4F;
+  line-height: 100%;
+}
+
+.date-picker{
+  color:  rgba(58, 57, 57, 0.6);
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 2px solid rgb(216 180 254);
 }
 
 .btn-gradient{
