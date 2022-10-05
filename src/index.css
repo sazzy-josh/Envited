@@ -10,7 +10,7 @@
 
 @layer components{
   .input-field{
-    @apply border-purple-300 border-2 text-sm w-full p-2 rounded-md outline-none placeholder:text-opacity-40
+    @apply outline-none w-full h-full text-black
   }
 }
 
@@ -76,4 +76,10 @@ background: linear-gradient(90deg, rgb(132, 87, 238) 0%, rgba(232,123,248,1) 100
   height: auto;
   width: 60vh;
   
+}
+.date{
+  position: absolute;
+  left: 5%;
+  top: 10px;
+  border-radius: 30px;
 }
