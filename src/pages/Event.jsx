@@ -2,7 +2,7 @@ import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import { MdOutlineKeyboardArrowRight, MdOutlineModeEdit } from 'react-icons/md';
 import { GoCalendar, GoLocation } from "react-icons/go"
-import { Outlet, useNavigate} from 'react-router-dom'
+import { Link, Outlet, useNavigate} from 'react-router-dom'
 import { useGlobalContext } from '../context/stateContext';
 import { format } from 'date-fns';
 
@@ -18,6 +18,9 @@ const ViewEvent = () => {
     <>
     <Outlet />
      <div className="hidden px-[240px] py-[180px] lg:flex  w-full h-screen bg-slate-100">
+     <Link to='/'>
+       <header className='header'>Envato</header>
+      </Link>
       <div className='w-1/2 '>
 
        <div className='flex items-center justify-between -mt-[20px]'>

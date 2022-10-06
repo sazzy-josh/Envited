@@ -7,7 +7,7 @@ import { HiOutlineCloudUpload } from 'react-icons/hi'
 import { motion , AnimatePresence } from "framer-motion"
 import { MdOutlineLocationOn } from "react-icons/md"
 import { DateRange } from 'react-date-range';
-import Avatar from "../assets/avatar.png"
+import Avatar from "../assets/Birthday cake.png"
 import { format } from 'date-fns'
 import { useGlobalContext } from '../context/stateContext';
 import { useState } from 'react';

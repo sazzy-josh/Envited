@@ -41,6 +41,31 @@ body{
   -webkit-text-fill-color: transparent;
   
 }
+
+.header{
+  position: fixed;
+  top: 10px;
+  left: 20px;
+  background: #8456EC;
+  font-size: 30px;
+  font-weight: 700;
+  background: linear-gradient(to right, #8456EC 0%, #E87BF8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.header::before{
+  content: "";
+  width: 80px;
+  height: 3px;
+  border-radius: 20px;
+  background: rgb(132,86,236);
+  background: linear-gradient(90deg, rgb(132, 87, 238) 0%, rgba(232,123,248,1) 100%);
+  position: absolute;
+  bottom: 1px;
+  
+}
+
+
 .color{
   color:  #4F4F4F;
   line-height: 100%;
