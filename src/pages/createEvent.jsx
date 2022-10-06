@@ -15,7 +15,7 @@ const CreateEvent = () => {
 
   return (
     <>
-      <Modal handleSubmit={handleSubmit}   />
+      <Modal handleSubmit={handleSubmit} Value="Next"   />
     </>
   )
 }

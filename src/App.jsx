@@ -1,27 +1,25 @@
-import { BrowserRouter as Router , Routes , Route  } from 'react-router-dom'
+import {Routes , Route, useNavigate  } from 'react-router-dom'
 import Home from './pages/Home' 
 import CreateEvent from './pages/createEvent'
-import AppContextProvider from './context/stateContext'
 import ViewEvent from './pages/Event'
 import Modal from './components/modal'
-
- 
- 
+import { useGlobalContext } from './context/stateContext'
 
 function App() {
+
+  const { handleSubmit } = useGlobalContext()
   return (
-    <AppContextProvider>
-     <Router>
+    <>
       <Routes>
-       <Route path='/' element={<Home />}>
-        <Route path='create/new' element={ <CreateEvent /> }/>
-       </Route> 
-       <Route path='/events' element={<ViewEvent />} >
-         <Route path='edit' element={ <Modal/> }/>
-       </Route> 
-      </Routes>
-     </Router>    
-    </AppContextProvider>
+        <Route path='/' element={<Home />}>
+          <Route path='create/new' element={ <CreateEvent /> }/>
+        </Route> 
+        <Route path='/events' element={<ViewEvent />} >
+          <Route path='edit' element={ <Modal Value="Done" handleSubmit={handleSubmit}/>}/>
+        </Route> 
+    </Routes>   
+    </>
+  
   )
 }
 

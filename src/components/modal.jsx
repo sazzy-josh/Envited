@@ -13,16 +13,8 @@ import { useGlobalContext } from '../context/stateContext';
 import { useState } from 'react';
 
 
-const Modal = ({ handleSubmit }) => {
+const Modal = ({ handleSubmit , Value}) => {
    const navigate = useNavigate()
-
-    const [state, setState] = useState([
-        {
-          startDate: new Date(),
-          endDate: new Date(),
-          key: 'selection'
-        }
-      ]);
       
    //Function to go back one step back..
     const goBack = () => {
@@ -30,7 +22,7 @@ const Modal = ({ handleSubmit }) => {
     }
 
   const [ isDateOpen , setIsDateOpen ]  = useState(false)
-  const { values , handleChange , handleImage } = useGlobalContext()
+  const { values , handleChange , handleImage , state, setState } = useGlobalContext()
 
   return (
     <AnimatePresence>
@@ -61,6 +53,18 @@ const Modal = ({ handleSubmit }) => {
                 <input type="text" name="location" value={values.location} onChange={handleChange} className="input-field" placeholder="Your location..."/>
                 </span>
 
+                <div className='date-picker justify-between flex'>
+                  <span >
+                    <p> Start:</p>
+                    <input type="time" name="startTime" onChange={handleChange} required></input>
+                  </span>
+
+                  <span>
+                    <p>End:</p>
+                    <input type="time" name="endTime" onChange={handleChange} required></input>
+                  </span>
+                </div>
+
                 <div className='flex flex-col relative h-[5vh]'>
                   <span className="date-picker flex items-center gap-x-2" onMouseEnter={() => setIsDateOpen(prev => !prev)} >
                   <BsCalendar2Date />
@@ -84,17 +88,17 @@ const Modal = ({ handleSubmit }) => {
                 </div>
 
                 <div className="flex items-center gap-x-1">
-                  <label htmlFor="photoUrl"  >
-                  <div className="flex items-center gap-x-2">
+                  <label htmlFor="photoUrl">
+                  <div className="flex items-center gap-x-2">   
                   <img src={ !values.photoUrl ? Avatar : values.photoUrl } alt="event-image" className="rounded-full w-[100px] h-[100px] cursor-pointer object-contain"/>
                   <p className="font-light flex gap-x-1 items-center cursor-pointer ">Upload Image <HiOutlineCloudUpload/></p>
                 
                   </div>
-                    <input type="file" name="photoUrl" id="photoUrl" onChange={handleImage} className="rounded-sm text-sm color hidden" />
-                    </label>
+                  <input type="file" name="photoUrl" id="photoUrl" onChange={handleImage} className="rounded-sm text-sm color hidden" />
+                  </label>
                   </div>
                 <>
-                { values.HostName && values.location && values.photoUrl && values.Eventname !== "" ? (<input type="submit" className='border rounded-lg flex items-center justify-center p-1 font-semibold  text-[20px] text-white btn-gradient shadow-lg cursor-pointer' value="Next"/>) : ( <input type="submit" disabled className='border rounded-lg flex items-center justify-center p-1 font-semibold  text-[20px] text-white btn-gradient shadow-lg cursor-not-allowed' value="Next" />)}
+                {values.HostName && values.location && values.photoUrl && values.Eventname !== "" ? (<input type="submit" className='border rounded-lg flex items-center justify-center p-1 font-semibold  text-[20px] text-white btn-gradient shadow-lg cursor-pointer' value="Next"/>) : ( <input type="submit" disabled className='border rounded-lg flex items-center justify-center p-1 font-semibold  text-[20px] text-white btn-gradient shadow-lg cursor-not-allowed' value={Value} />)}
                 </>
               </form>
              
