@@ -61,7 +61,7 @@ const ViewEvent = () => {
            <span className='flex flex-col gap-y-[2px]'>
               <span className='text-[#240D57] font-bold text-[18px]'>
               <span className='flex'>
-              <p>Street name</p>
+              <p>Event Centre</p>
               </span>
               </span>
             <span className='flex gap-x-2 text-[#4F4F4F] text-[18px]'>

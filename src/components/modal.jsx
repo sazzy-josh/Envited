@@ -40,17 +40,17 @@ const Modal = ({ handleSubmit , Value}) => {
               <form className="flex flex-col gap-y-2" onSubmit={handleSubmit}>
                 <span className="date-picker flex items-center gap-x-2">
                   <BsPersonCircle className="text-slate-400"/>
-                <input type="text" name="HostName" value={values.HostName}  autoFocus onChange={handleChange} className="input-field " placeholder="Host name..."/>
+                <input type="text" name="HostName" value={values.HostName} autoComplete="off"  autoFocus onChange={handleChange} className="input-field " placeholder="Host name..."/>
                 </span>
                
                 <span className="date-picker flex items-center gap-x-2">
                   <MdCelebration className="text-slate-400"/>
-                <input type="text" name="Eventname" value={values.Eventname} onChange={handleChange} className="input-field" placeholder="Event name..."/>
+                <input type="text" name="Eventname" value={values.Eventname} autoComplete="off"  onChange={handleChange} className="input-field" placeholder="Event name..."/>
                 </span>
 
                 <span className="date-picker flex items-center gap-x-2">
                  <MdOutlineLocationOn />
-                <input type="text" name="location" value={values.location} onChange={handleChange} className="input-field" placeholder="Your location..."/>
+                <input type="text" name="location" value={values.location} autoComplete="off"  onChange={handleChange} className="input-field" placeholder="Your location..."/>
                 </span>
 
                 <div className='date-picker justify-between flex'>
