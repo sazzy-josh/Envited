@@ -19,7 +19,7 @@ function App() {
           <Route path='events' element={<ViewEvent />} >
             <Route path='edit' element={<Modal Value="Done" handleSubmit={handleSubmit}/>}/>
           </Route>
-          <Route path='event' element={<>Event</>} />
+          {/* <Route path='event' element={<>Event</>} /> */}
       </Routes>   
     </>
   
