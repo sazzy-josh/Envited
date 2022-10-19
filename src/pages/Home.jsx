@@ -1,6 +1,7 @@
 import React from 'react'
 import heroImg from '../assets/hero image.png'
-import { Outlet , Link } from 'react-router-dom'
+import { Outlet , Link , NavLink } from 'react-router-dom'
+import Navbar from '../components/Navbar'
 
 
 const Home = () => {
@@ -10,13 +11,14 @@ const Home = () => {
     {/* Desktop view */}
    
       <Outlet/>
+     
     <div className="hidden lg:grid lg:grid-cols-2 h-screen w-screen bg-slate-50 px-[160px]">
      {/* Image Section */}
       <div className='image-container w-full h-full '>
       <Link to='/'>
        <header className='header tracking-wider'>Envato</header>
       </Link>
-       <img src={heroImg} alt="hero-image" className='object-contain h-[480px] w-[480px] drop-shadow-lg' />
+       <img src={heroImg} alt="hero-image" className='object-contain h-[480px] w-[480px] drop-shadow-lg' />   
       </div>
      {/* Text Section */}
       <div className='h-full w-full flex flex-col items-end justify-center gap-y-1'>

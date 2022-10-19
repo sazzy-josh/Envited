@@ -53,6 +53,20 @@ body{
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.active{
+  font-weight: 700;
+  background: linear-gradient(to right, #8456EC 0%, #E87BF8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+ .not-active{
+  font-weight: 600;
+  background: linear-gradient(to right, #0d0d0e 0%, #1d1c1d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+} 
 .header::before{
   content: "";
   width: 80px;
