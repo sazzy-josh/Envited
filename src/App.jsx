@@ -16,10 +16,9 @@ function App() {
           <Route path='/' element={<Home />}>
             <Route path='create/new' element={<CreateEvent /> }/>
           </Route> 
-          <Route path='events' element={<ViewEvent />} >
-            <Route path='edit' element={<Modal Value="Done" handleSubmit={handleSubmit}/>}/>
+          <Route path='events/:id' element={<ViewEvent />} >
+            <Route path='edit/:id' element={<Modal Value="Done" handleSubmit={handleSubmit}/>}/>
           </Route>
-          {/* <Route path='event' element={<>Event</>} /> */}
       </Routes>   
     </>
   

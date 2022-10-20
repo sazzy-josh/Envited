@@ -5,7 +5,7 @@ import { GoCalendar, GoLocation } from "react-icons/go"
 import { Link, Outlet, useNavigate , NavLink} from 'react-router-dom'
 import { useGlobalContext } from '../context/stateContext';
 import { format } from 'date-fns';
-import Navbar from '../components/Navbar';
+
 
 const ViewEvent = () => {
    const navigate = useNavigate()
