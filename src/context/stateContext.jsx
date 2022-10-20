@@ -1,5 +1,9 @@
 import { createContext , useContext , useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { addDoc } from "firebase/firestore"; 
+import { colRef } from "../firebase.config";
+import {  toast } from 'react-toastify';
+
 
 export const AppContext = createContext()
 
@@ -26,7 +30,7 @@ const AppContextProvider = ({ children }) => {
 
     //*handles onchange event for all inputs
     const handleChange = (e) => {
-        const {name ,value} = e.target   
+        const { name , value } = e.target   
         setValues({ ...values , [name]: value })  
     }
 
@@ -36,13 +40,12 @@ const AppContextProvider = ({ children }) => {
         //> console.log(URL.createObjectURL(e.target.files));
         setValues({...values , [name]: URL.createObjectURL(files[0])});
      }
- 
-     //handles date data
-
 
      //*handles submit button after event has been edited
-     function handleSubmit(e){
-      e.preventDefault()
+     const handleSubmit = async(e) => {
+       e.preventDefault()
+       await addDoc(colRef , {...values})
+       toast.success("added successfully")
        navigate(-1)
      }
  
